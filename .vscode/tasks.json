@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": ["$tsc"],
+      "label": "npm: build",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "test",
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "problemMatcher": ["$tsc"],
+      "label": "npm: test",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "problemMatcher": ["$tsc"],
+      "label": "npm: lint",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "label": "build",
+      "dependsOn": ["npm: build", "npm: test", "npm: lint"],
+      "dependsOrder": "sequence"
+    }
+  ]
+}

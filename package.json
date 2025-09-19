@@ -15,6 +15,12 @@
     "dist/**/*.js",
     "dist/**/*.d.ts"
   ],
+  "keywords": [
+    "composition",
+    "function",
+    "pipeline",
+    "typescript"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "name": "@arthurgubaidullin/pipe-ts",

@@ -1,4 +1,4 @@
-# pipe
+# PipeTS
 
 Left-to-right function composition in TypeScript.
 

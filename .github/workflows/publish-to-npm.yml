@@ -1,0 +1,29 @@
+name: Publish Package to NpmJS
+on:
+  release:
+    types: [published]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install jq tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install jq -y
+      - run: npm ci --include dev
+      - run: npm run build
+      - run: |
+          cp package.json package.tmp.json 
+          jq 'del(.devDependencies, .scripts)' package.tmp.json > package.json 
+          npm publish --provenance --access public 
+          mv package.tmp.json package.json
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

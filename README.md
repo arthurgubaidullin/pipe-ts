@@ -35,4 +35,6 @@ pipe(5); // returns 5
 
 ## License
 
-MIT
+Copyright (c) Artur Gubaidullin. All rights reserved.
+
+Licensed under the [MIT](LICENSE) license.

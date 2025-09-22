@@ -7,10 +7,6 @@
  * // => (2 + 2) * 3 = 12
  *
  * @example
- * // If only a value is provided, it's returned unchanged:
- * pipe(5); // => 5
- *
- * @example
  * // Longer chain example
  * pipe(
  *   "hi",
@@ -22,7 +18,6 @@
  * // => "SJ IH"
  */
 
-export function pipe<A>(a: A): A;
 export function pipe<A, B>(a: A, ab: (a: A) => B): B;
 export function pipe<A, B, C>(a: A, ab: (a: A) => B, bc: (b: B) => C): C;
 export function pipe<A, B, C, D>(

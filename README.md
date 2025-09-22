@@ -28,9 +28,6 @@ const output = pipe(
   (arr) => arr.reverse().join("")
 );
 // output: "SJ IH"
-
-// Using only value, no functions
-pipe(5); // returns 5
 ```
 
 ## License

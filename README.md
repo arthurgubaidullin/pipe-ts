@@ -4,7 +4,9 @@ Left-to-right function composition in TypeScript.
 
 ## Installation
 
-`npm install @arthurgubaidullin/pipe-ts --save`
+```sh
+npm install @arthurgubaidullin/pipe-ts --save
+```
 
 ## Usage
 
